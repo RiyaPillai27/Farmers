@@ -1,0 +1,35 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>templates</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+    <h1>Templates as a Response</h1>
+    <p> data in dictinary is: {{greet}} </p>
+    {{x}}<br>
+    {{y}}<br>
+    {% if x > y %}
+        <p>{{x}} is greater </p>
+    {% else %}
+        <p>{{y}} is greater</p> 
+    {% endif %}  
+    <p>lis is :{{l}} </p>  
+    {% for x in l %}
+        <p>{{x}}</p>
+    {% endfor %}
+    <!-- <p>dictinary {{student}}</p> --> 
+    {% for x in student %}
+         <strong>Serial No.</strong>{{forloop.counter}}<br>
+         <strong>Name:</strong>{{x.name}}<br>
+         <strong>Age:</strong>{{x.age}}<br>
+         <strong>Gender:</strong>{{x.gender}}<br>
+         <hr>
+    {% endfor %} 
+    <button onclick="greet()">click me</button>
+    <img src="{% static "images/riyaimg.jpg" %}" width="200px" height="" alt="my_img" title="ryaimg" />           
+</body>
+</html>

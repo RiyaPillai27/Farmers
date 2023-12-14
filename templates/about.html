@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'main' %}
+<div class="row mt-5">
+    <div class="col-md-9">
+        <h5 class="bg-primary text-white p-2">About Us</h5>
+        <p><strong>Who We Are:</strong>&nbsp;&nbsp;&nbsp; At Farmers, we believe in the power of sustainable agriculture and the importance of connecting farmers directly with consumers. Our mission is to create a bridge between hardworking farmers and conscious consumers who care about where their food comes from.</p>
+        <p><strong>What We Do:</strong>&nbsp;&nbsp;&nbsp; We've developed a user-friendly mobile app that brings fresh, locally grown vegetables straight from the farms to your table. By using our platform, you're not just buying vegetables; you're supporting local farmers, promoting eco-friendly practices, and ensuring the freshest produce for your family.</p>
+        <p><strong>Our Vision:</strong>&nbsp;&nbsp;&nbsp; We envision a world where every family has easy access to fresh, organic, and locally sourced vegetables. By supporting local farmers, we aim to create a sustainable future for agriculture and contribute to healthier communities.</p>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'asset/images/Eating-Healthily.jpg' %}" width="100%" alt="">
+
+            </div>
+            <div class="col-md-8">
+                <p><strong>Why Choose Us:</strong>&nbsp;&nbsp;&nbsp;<br><b>Farm-to-Table Transparency:</b>We provide detailed information about the farmers, their practices, and the journey of your vegetables from the farm to your doorstep.
+
+                    <br><b>Quality Assurance:</b> We work closely with farmers who prioritize quality, ensuring that you receive the finest, farm-fresh produce every time you order.
+                    <br><b>Community Impact:</b> Your purchases not only benefit you but also support local farmers, boost the local economy, and promote environmentally friendly agricultural methods.</p>
+            </div>    
+        </div>
+
+        <p><strong>Meet the Team:</strong>&nbsp;&nbsp;&nbsp; Behind Farmers is a dedicated team of technology enthusiasts, agriculture experts, and eco-conscious individuals who are passionate about revolutionizing the way we buy and consume vegetables. We are committed to making a positive impact on farmers' lives and promoting sustainable farming practices.</p>
+        <p><strong>Get Involved:</strong>&nbsp;&nbsp;&nbsp; We encourage you to join us in our mission. Whether you're a farmer looking to connect with consumers or a customer who wants to support local agriculture, there are many ways to get involved. Reach out to us to learn more about partnership opportunities, volunteering, or simply spreading the word about our app.</p>
+        <p>Thank you for being a part of the Farmers community. Together, we can create a future where everyone has access to fresh, healthy vegetables while supporting the hardworking farmers who make it all possible.</p>      
+        <p>Warm regards,</p>
+        <p>The Farmers Team</p>
+        <a href="/contact"><button class="btn btn-primary">Feel Free!</button></a>&nbsp;&nbsp;&nbsp; 
+    </div>
+</div>    
+
+
+{% endblock 'main' %}

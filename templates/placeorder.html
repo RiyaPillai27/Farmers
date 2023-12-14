@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'main' %}
+        <!--cart start-->
+        <div class="row mt-5">
+            <div class="col-md-9">
+                {% for x in data %}
+                {% if forloop.counter == 1 %}
+                    <h5 class="bg-primary text-white p-2">Customer Details</h5>
+                    <p><strong>Customer Name:</strong>&nbsp;&nbsp;&nbsp; {{x.uid.username}} </p>
+                    <p><strong>Customer Mobile No.:</strong>&nbsp;&nbsp;&nbsp; 7415831658</p>
+                    <p><strong>Customer Email:</strong>&nbsp;&nbsp;&nbsp; {{x.uid.email}} </p>
+                {% endif %}
+                {% endfor %}
+                {% for x in data %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src=" {{x.pid.pimage.url }} " width="100%" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <p><strong>Product Name:</strong>&nbsp;&nbsp;&nbsp; {{x.pid.name}} </p>
+                        <p><strong>Product Price:</strong>&nbsp;&nbsp;&nbsp; {{x.pid.price}} </p>
+                        {% if x.pid.cat == 1 %}
+                          <p><strong>Category:</strong>&nbsp;&nbsp;&nbsp; Vegetable </p>
+                        {% elif x.pid.cat == 2 %}
+                          <p><strong>Category:</strong>&nbsp;&nbsp;&nbsp; Fruit </p>
+                        {% else %}
+                          <p><strong>Category:</strong>&nbsp;&nbsp;&nbsp; Grocery </p>
+                        {% endif %}
+                        <p><strong>Product Description:</strong>&nbsp;&nbsp;&nbsp; {{x.pid.pdetail}} </p>
+                        <br>
+                        <!--- <p>
+                                <strong>QTY:</strong>
+                                <a href="/updateqty/0/{{x.id}}" ><button class="btn btn-danger">-</button></a>
+                                <input type="number" value="{{x.qty}}">
+                                <a href="/updateqty/1/{{x.id}}" ><button class="btn btn-success">+</button></a>
+                            </p>--->
+                        <a href="/remove/{{x.id}}"><button class="btn btn-primary">Remove</button></a>&nbsp;&nbsp;&nbsp;
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!--customer details and product details-->
+            
+            <div class="col-md-3">
+                <h5 class="bg-primary text-white p-2">Total Amount</h5>
+                <p><strong>Total( {{n}} items):</strong> Rs. {{total}} </p>
+                <hr>
+                <p><strong>Total Amount:</strong>Rs. {{total}} </p>
+                <a href="/makepayment"><button class="btn btn-primary">MakePayment</button></a>
+            </div><!--total amount section-->
+        </div>
+        <!--cart ends-->
+{% endblock 'main' %}
